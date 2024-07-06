@@ -1,27 +1,64 @@
-# NgxLazyDirective
+## Getting Started
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+`ngx-lazy-directive` provides an easy way to lazy load components combined with \*ngIf directive, thereby reducing the Firrst Contentful Paint time when a module becomes larger.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+`npm install ngx-lazy-directive`.
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Import the `ngx-lazy-directive` directive to the parent component(a component accomodating the lazy loaded component) and allow it to contain none-Angular elements named with dash case(-) using CUSTOM_ELEMENTS_SCHEMA.
 
-## Build
+```
+@Component({
+  ...
+  standalone: true,
+  imports: [LazyLoadDirective],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  ...
+})
+export class DashboardComponent {
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Define a list of component should be lazy loaded.
 
-## Running unit tests
+```
+export const LAZY_LOADED_COMPONENTS = {
+	'app-chart': () => import('src/app/dashboard/chat.component.ts')
+}
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Pass the import function to the `loadChild` property.
 
-## Running end-to-end tests
+```
+<app-chart  *ngIf="visible"
+      		ngxLazyDirective
+      		[loadChild]="LAZY_LOADED_COMPONENTS['app-chart']">
+</app-chart>
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Pass binding data and event handlers for the lazy loaded component within inputs and outputs objects.
 
-## Further help
+```
+<app-chart  *ngIf="visible"
+      		ngxLazyDirective
+      		[loadChild]="LAZY_LOADED_COMPONENTS['app-chart']"
+      		[inputs]="{
+        		dataSource: dataSource,
+        		name: name
+      		}"
+      		[outputs]="{
+        		nameChanged: onNameChanged
+      		}">
+</app-chart>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Define event handlers.
+   **Note**: Event handlers should be arrow functions.
+
+```
+onNameChanged = (name: string) => {
+	this.name = name;
+}
+```
