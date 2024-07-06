@@ -4,7 +4,9 @@
 
 ## Installation
 
-`npm install ngx-lazy-directive`.
+```
+npm install ngx-lazy-directive
+```
 
 ## Usage
 
