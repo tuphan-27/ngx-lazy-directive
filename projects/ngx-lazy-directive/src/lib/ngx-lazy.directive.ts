@@ -11,10 +11,10 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[appLazyLoad]',
+  selector: '[ngxLazyDirective]',
   standalone: true,
 })
-export class LazyLoadDirective implements OnChanges {
+export class NgxLazyDirective implements OnChanges {
   /**
    * A fucntion of importing component
    */
