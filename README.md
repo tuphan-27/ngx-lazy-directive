@@ -10,7 +10,7 @@ npm install ngx-lazy-directive
 
 ## Usage
 
-1. Import the `ngx-lazy-directive` directive to the parent component(a component accomodating the lazy loaded component) and allow it to contain none-Angular elements named with dash case(-) using CUSTOM_ELEMENTS_SCHEMA.
+1. Import the `ngx-lazy-directive` directive to the parent component(a component accomodating the lazy loaded component) and allow it to contain none-Angular elements named with dash case(-) using `CUSTOM_ELEMENTS_SCHEMA`.
 
 ```
 @Component({
