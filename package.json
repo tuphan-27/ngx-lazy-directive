@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build-lib": "ng build ngx-lazy-directive",
+    "publish-lib": "npm run build-lib && cp -rf ./README.md ./dist/ngx-lazy-directive && cd ./dist/ngx-lazy-directive && npm publish",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
