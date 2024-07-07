@@ -27,13 +27,13 @@ export class DashboardComponent {
 
 ```js
 export const LAZY_LOADED_COMPONENTS = {
- 'app-chart': () => import('src/app/dashboard/chat.component.ts')
+ 'app-chart': () => import('src/app/dashboard/components/chart.component.ts')
 }
 ```
 
 3. Pass the import function to the `loadChild` property.
 
-```js
+```html
 <app-chart
      *ngIf="visible"
      ngxLazyDirective
@@ -43,7 +43,7 @@ export const LAZY_LOADED_COMPONENTS = {
 
 4. Pass binding data and event handlers for the lazy loaded component within inputs and outputs objects.
 
-```js
+```html
 <app-chart
     *ngIf="visible"
     ngxLazyDirective
