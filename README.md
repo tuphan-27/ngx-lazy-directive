@@ -10,20 +10,7 @@ npm install ngx-lazy-directive
 
 ## Usage
 
-1. Import the `ngx-lazy-directive` directive to the parent component(a component accomodating the lazy loaded component) and allow it to contain none-Angular elements named with dash case(-) using `CUSTOM_ELEMENTS_SCHEMA`.
-
-```js
-@Component({
-  ...
-  standalone: true,
-  imports: [LazyLoadDirective],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  ...
-})
-export class DashboardComponent {
-```
-
-2. Define a list of components should be lazy loaded.
+1. Define a list of components should be lazy loaded.
 
 ```js
 export const LAZY_LOADED_COMPONENTS = {
@@ -31,7 +18,7 @@ export const LAZY_LOADED_COMPONENTS = {
 }
 ```
 
-3. Pass the import function to the `loadChild` property.
+2. Pass the import function to the `loadChild` property.
 
 ```html
 <app-chart
@@ -41,7 +28,7 @@ export const LAZY_LOADED_COMPONENTS = {
 </app-chart>
 ```
 
-4. Pass binding data and event handlers for the lazy loaded component within inputs and outputs objects.
+3. Pass binding data and event handlers for the lazy loaded component within inputs and outputs objects.
 
 ```html
 <app-chart
@@ -58,7 +45,7 @@ export const LAZY_LOADED_COMPONENTS = {
 </app-chart>
 ```
 
-5. Define event handlers.
+4. Define event handlers.
 
 **Note**: Event handlers should be arrow functions.
 
