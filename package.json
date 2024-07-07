@@ -7,6 +7,7 @@
     "build": "ng build",
     "build-lib": "ng build ngx-lazy-directive",
     "publish-lib": "npm run build-lib && node ./updatePackageJson.js && cp -rf ./README.md ./dist/ngx-lazy-directive && cd ./dist/ngx-lazy-directive && npm publish",
+    "release": "standard-version",
     "release-rc": "standard-version --prerelease rc",
     "release-major": "standard-version -r major",
     "release-minor": "standard-version -r minor",
