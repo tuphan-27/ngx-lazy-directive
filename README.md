@@ -1,6 +1,6 @@
 ## Getting Started
 
-`ngx-lazy-directive` provides an easy way to lazy load components combined with \*ngIf directive, thereby reducing the Firrst Contentful Paint time when a module becomes larger.
+`ngx-lazy-directive` provides an easy way to lazy load components combined with `*ngIf` directive, thereby reducing the Firrst Contentful Paint time when a module becomes larger.
 
 ## Installation
 
@@ -28,7 +28,7 @@ export const LAZY_LOADED_COMPONENTS = {
 </app-chart>
 ```
 
-3. Pass binding data and event handlers for the lazy loaded component within inputs and outputs objects.
+3. Pass binding data and event handlers to the lazy loaded component using the inputs and outputs properties.
 
 ```html
 <app-chart
@@ -47,9 +47,8 @@ export const LAZY_LOADED_COMPONENTS = {
 
 4. Define event handlers.
 
-**Note**: Event handlers should be arrow functions.
-
 ```js
+// Event handlers must be arrow functions
 onNameChanged = (name: string) => {
   this.name = name;
 }
