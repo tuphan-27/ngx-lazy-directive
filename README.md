@@ -23,7 +23,7 @@ npm install ngx-lazy-directive
 export class DashboardComponent {
 ```
 
-2. Define a list of component should be lazy loaded.
+2. Define a list of components should be lazy loaded.
 
 ```js
 export const LAZY_LOADED_COMPONENTS = {
@@ -59,6 +59,7 @@ export const LAZY_LOADED_COMPONENTS = {
 ```
 
 5. Define event handlers.
+
    **Note**: Event handlers should be arrow functions.
 
 ```js
