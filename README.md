@@ -60,7 +60,7 @@ export const LAZY_LOADED_COMPONENTS = {
 
 5. Define event handlers.
 
-   **Note**: Event handlers should be arrow functions.
+**Note**: Event handlers should be arrow functions.
 
 ```js
 onNameChanged = (name: string) => {
