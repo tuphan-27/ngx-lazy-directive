@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
   ChangeDetectionStrategy,
   Component,
 } from '@angular/core';
@@ -17,7 +16,6 @@ const LAZY_LOADED_COMPONENTS = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [CommonModule, NgxLazyDirective],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class DashboardComponent {
   LAZY_LOADED_COMPONENTS = LAZY_LOADED_COMPONENTS;
