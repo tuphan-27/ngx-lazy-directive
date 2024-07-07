@@ -64,6 +64,6 @@ export const LAZY_LOADED_COMPONENTS = {
 
 ```js
 onNameChanged = (name: string) => {
-	this.name = name;
+  this.name = name;
 }
 ```
