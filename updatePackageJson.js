@@ -5,6 +5,7 @@ const sourceFile = editJsonFile(`${__dirname}/package.json`);
 const targerFile = editJsonFile(`${__dirname}/dist/ngx-lazy-directive/package.json`);
 
 targerFile
+    .set('version', sourceFile.get('version'))
     .set('repository', sourceFile.get('repository'))
     .set('author', sourceFile.get('author'))
     .set('keywords', sourceFile.get('keywords'))
