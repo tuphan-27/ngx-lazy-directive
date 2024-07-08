@@ -27,7 +27,7 @@ export class NgxLazyDirective implements OnChanges {
    * Event handlers of the host component
    * Note: event handlers should be arrow functions
    */
-  @Input() outputs!: Record<string, Function>;
+  @Input() outputs!: Record<string, any>;
 
   /**
    * Occurring when starting to lazy load the component
