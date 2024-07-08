@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/tuphan-27/ngx-lazy-directive/compare/v1.0.2...v1.0.3) (2024-07-08)
+
+
+### Bug Fixes
+
+* outputs value type ([ae23e4a](https://github.com/tuphan-27/ngx-lazy-directive/commit/ae23e4af38a2b3524c1b4b00c445ca8bf6e34edf))
+
 ### [1.0.2](https://github.com/tuphan-27/ngx-lazy-directive/compare/v1.0.1...v1.0.2) (2024-07-07)
 
 ### [1.0.1](https://github.com/tuphan-27/ngx-lazy-directive/compare/v1.0.0...v1.0.1) (2024-07-07)
