@@ -5,7 +5,7 @@
     "outDir": "./out-tsc/app",
     "types": [],
     "paths": {
-      "ngx-lazy-directive": ["dist/ngx-lazy-directive"]
+      "ngx-lazy-directive": ["projects/ngx-lazy-directive/src/public-api"]
     }
   },
   "files": ["src/main.ts"],
