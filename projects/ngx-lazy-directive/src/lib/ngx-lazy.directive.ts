@@ -16,7 +16,7 @@ import {
 })
 export class NgxLazyDirective implements OnChanges {
   /**
-   * A fucntion of importing component
+   * A function of importing component
    */
   @Input() loadChild!: () => Promise<any>;
   /**
@@ -34,7 +34,7 @@ export class NgxLazyDirective implements OnChanges {
    */
   @Output() started = new EventEmitter();
   /**
-   * Occurring when fnishing lazy loading the component
+   * Occurring when finishing lazy loading the component
    */
   @Output() completed = new EventEmitter();
 
