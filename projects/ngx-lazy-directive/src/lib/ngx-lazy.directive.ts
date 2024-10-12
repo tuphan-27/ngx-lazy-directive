@@ -18,16 +18,16 @@ export class NgxLazyDirective implements OnChanges {
   /**
    * A function of importing component
    */
-  @Input() loadChild!: () => Promise<any>;
+  @Input() loadChild: () => Promise<any>;
   /**
    * Inputs of the host component
    */
-  @Input() inputs!: Record<string, any>;
+  @Input() inputs: Record<string, any>;
   /**
    * Event handlers of the host component
    * Note: event handlers should be arrow functions
    */
-  @Input() outputs!: Record<string, any>;
+  @Input() outputs: Record<string, any>;
 
   /**
    * Occurring when starting to lazy load the component
@@ -38,7 +38,7 @@ export class NgxLazyDirective implements OnChanges {
    */
   @Output() completed = new EventEmitter();
 
-  componentRef!: ComponentRef<any>;
+  componentRef: ComponentRef<any>;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
