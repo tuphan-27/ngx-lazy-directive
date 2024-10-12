@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.0.0](https://github.com/tuphan-27/ngx-lazy-directive/compare/v1.0.3...v14.0.0) (2024-10-12)
+
+
+### Features
+
+* support for angular 14 ([5cbbbc8](https://github.com/tuphan-27/ngx-lazy-directive/commit/5cbbbc835ba8b82b02f311f15756738ecef8b54b))
+
 ### [1.0.3](https://github.com/tuphan-27/ngx-lazy-directive/compare/v1.0.2...v1.0.3) (2024-07-08)
 
 
