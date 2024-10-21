@@ -12,6 +12,8 @@ npm install ngx-lazy-directive
 
 1. Define a list of components should be lazy loaded.
 
+**Note**: components should be standalone.
+
 ```js
 export const LAZY_LOADED_COMPONENTS = {
  'app-chart': () => import('src/app/dashboard/components/chart.component.ts')
@@ -21,17 +23,17 @@ export const LAZY_LOADED_COMPONENTS = {
 2. Pass the import function to the `loadChild` property.
 
 ```html
-<app-chart
+<ng-container
      *ngIf="visible"
      ngxLazyDirective
      [loadChild]="LAZY_LOADED_COMPONENTS['app-chart']">
-</app-chart>
+</ng-container>
 ```
 
 3. Pass binding data and event handlers to the lazy loaded component using the inputs and outputs properties.
 
 ```html
-<app-chart
+<ng-container
     *ngIf="visible"
     ngxLazyDirective
     [loadChild]="LAZY_LOADED_COMPONENTS['app-chart']"
@@ -42,7 +44,7 @@ export const LAZY_LOADED_COMPONENTS = {
     [outputs]="{
       nameChanged: onNameChanged
     }">
-</app-chart>
+</ng-container>
 ```
 
 4. Define event handlers.
