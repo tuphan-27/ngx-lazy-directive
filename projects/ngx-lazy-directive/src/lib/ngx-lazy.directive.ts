@@ -18,16 +18,16 @@ export class NgxLazyDirective implements OnChanges {
   /**
    * A function of importing component
    */
-  @Input() loadChild!: () => Promise<any>;
+  @Input() loadChild: () => Promise<any>;
   /**
    * Inputs of the host component
    */
-  @Input() inputs!: Record<string, any>;
+  @Input() inputs: Record<string, any>;
   /**
    * Event handlers of the host component
    * Note: event handlers should be arrow functions
    */
-  @Input() outputs!: Record<string, any>;
+  @Input() outputs: Record<string, any>;
 
   /**
    * Occurring when starting to lazy load the component
@@ -38,7 +38,7 @@ export class NgxLazyDirective implements OnChanges {
    */
   @Output() completed = new EventEmitter();
 
-  componentRef!: ComponentRef<any>;
+  componentRef: ComponentRef<any>;
 
   constructor(
     private changeDetectorRef: ChangeDetectorRef,
@@ -47,19 +47,19 @@ export class NgxLazyDirective implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['loadChild']?.currentValue) {
-      this.loadComponent();
+      this._loadComponent();
     }
 
     if (changes['inputs']?.currentValue && this.componentRef) {
-      this.bindingInputs();
+      this._bindingInputs();
     }
 
     if (changes['outputs']?.currentValue && this.componentRef) {
-      this.bindingOutputs();
+      this._bindingOutputs();
     }
   }
 
-  loadComponent() {
+  private _loadComponent() {
     this.started.emit();
 
     this.loadChild().then((component) => {
@@ -67,8 +67,8 @@ export class NgxLazyDirective implements OnChanges {
         component[Object.keys(component)[0]]
       );
 
-      this.bindingInputs();
-      this.bindingOutputs();
+      this._bindingInputs();
+      this._bindingOutputs();
 
       this.completed.emit();
 
@@ -76,14 +76,22 @@ export class NgxLazyDirective implements OnChanges {
     });
   }
 
-  bindingInputs() {
+  private _bindingInputs() {
     Object.keys(this.inputs ?? {}).forEach((input) => {
+      if(this.componentRef.instance[input]){
+        throw new Error(`${input} input does not exist`);
+      }
+
       this.componentRef.instance[input] = this.inputs[input];
     });
   }
 
-  bindingOutputs() {
+  private _bindingOutputs() {
     Object.keys(this.outputs ?? {}).forEach((output) => {
+      if(this.componentRef.instance[output]){
+        throw new Error(`${output} output does not exist`);
+      }
+
       this.componentRef.instance[output].observers = [
         {
           next: (event: any) => {
