@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [14.1.0](https://github.com/tuphan-27/ngx-lazy-directive/compare/v1.0.3...v14.1.0) (2024-10-23)
+
+
+### Features
+
+* support for angular 14 ([add53f2](https://github.com/tuphan-27/ngx-lazy-directive/commit/add53f2577ca954eaf66dac977f33cae9c8109d3))
+
+
+### Bug Fixes
+
+* throw errors if inputs or outputs don't exist ([09a23e8](https://github.com/tuphan-27/ngx-lazy-directive/commit/09a23e8cf614eaf691fc2505666db4102a209747))
+* validate host's inputs and outputs ([5e00076](https://github.com/tuphan-27/ngx-lazy-directive/commit/5e00076ace4d647fb3cd126cd95e1bc6987ceb4d))
+
 ### [14.0.1](https://github.com/tuphan-27/ngx-lazy-directive/compare/v14.0.0...v14.0.1) (2024-10-12)
 
 ## [14.0.0](https://github.com/tuphan-27/ngx-lazy-directive/compare/v1.0.3...v14.0.0) (2024-10-12)
