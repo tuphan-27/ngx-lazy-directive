@@ -1,4 +1,4 @@
-<app-chart
+<ng-container
   *ngIf="visible"
   ngxLazyDirective
   [loadChild]="LAZY_LOADED_COMPONENTS['app-chart']"
@@ -11,6 +11,6 @@
     randomNumberChanged: randomNumberChanged
   }"
 >
-</app-chart>
+</ng-container>
 
 <button (click)="onClicked()">Load Chart</button>
