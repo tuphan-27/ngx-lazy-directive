@@ -78,17 +78,13 @@ export class NgxLazyDirective implements OnChanges {
 
   private _bindingInputs() {
     Object.keys(this.inputs ?? {}).forEach((input) => {
-      if(this.componentRef.instance[input]){
-        throw new Error(`${input} input does not exist`);
-      }
-
       this.componentRef.instance[input] = this.inputs[input];
     });
   }
 
   private _bindingOutputs() {
     Object.keys(this.outputs ?? {}).forEach((output) => {
-      if(this.componentRef.instance[output]){
+      if(!this.componentRef.instance[output]){
         throw new Error(`${output} output does not exist`);
       }
 
